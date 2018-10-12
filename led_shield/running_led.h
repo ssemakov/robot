@@ -7,15 +7,15 @@ namespace LedShield {
 
   class RunningLed {
     public:
-      RunningLed(const int* color, const int& pin, int numLeds=defaultNumberOfLeds);
+      RunningLed(const int* color, const int& pin, const int& numLeds=defaultNumberOfLeds);
       ~RunningLed();
 
-      void run(int delayMs);
+      void run(const int& delayMs);
 
     private:
       const int* m_rgb;
       const int m_numLeds;
-      const MeRGBLed* m_led;
+      MeRGBLed* m_led;
 
       int prevLedIdx(int currentIdx);
   };

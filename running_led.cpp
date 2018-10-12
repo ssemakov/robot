@@ -1,7 +1,7 @@
 #include "led_shield/running_led.h"
 
 namespace LedShield {
-    RunningLed::RunningLed(const int* color, const int& pin, int numLeds)
+    RunningLed::RunningLed(const int* color, const int& pin, const int& numLeds)
       : m_rgb(color), m_numLeds(numLeds)
     {
       m_led = new MeRGBLed(0);
@@ -17,7 +17,7 @@ namespace LedShield {
     }
 
 
-  void RunningLed::run(int delayMs) {
+  void RunningLed::run(const int& delayMs) {
     for (int i=0; i<m_numLeds; i++)
     {
       int prev_idx = i;
